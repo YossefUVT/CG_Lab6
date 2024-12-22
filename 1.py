@@ -1,16 +1,9 @@
 import matplotlib.pyplot as plt
 from scipy.spatial import Voronoi, voronoi_plot_2d, Delaunay, delaunay_plot_2d
 
-points = [(3, 5), (6, 6), (6, 4), (9, 5), (9, 7)]
+extended_points = [(5, 1), (7, -1), (9, -1), (7, 3), (11, 1), (9, 3), (8, -4), (8, 6)]
 
-vor = Voronoi(points)
-fig, ax = plt.subplots(1, 2, figsize=(12, 6))
-
-voronoi_plot_2d(vor, ax=ax[0])
-ax[0].set_title("Voronoi Diagram")
-
-tri = Delaunay(points)
-delaunay_plot_2d(tri, ax=ax[1])
-ax[1].set_title("Delaunay Triangulation")
-
+vor = Voronoi(extended_points)
+voronoi_plot_2d(vor)
+plt.title("Voronoi Diagram with A7 and A8")
 plt.show()
